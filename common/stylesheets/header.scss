@@ -1,0 +1,156 @@
+@import 'base/color.scss';
+@import 'base/font.scss';
+@import 'base/mixin.scss';
+@import 'base/variable.scss';
+@import 'base/keyframes.scss';
+html {
+	font-size: $desktop;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background-color: $bg;
+}
+.header {
+	width: 100%;
+	height: 7rem;
+	@include box-sizing(border-box);
+	padding: 0 10%;
+	@include flexbox();
+	position: relative;
+	.header-left {
+		height: 1rem;
+		width: 30%;
+		margin-top: 3rem;
+		display: inline-block;
+		.left-logo {
+			height: 100%;
+			width: 8rem;
+			display: inline-block;
+			text-decoration: none;
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+	.header-center {
+		margin-top: 3.05rem;
+		width: 20.7rem;
+		height: 0.9rem;
+		@include flexbox();
+		margin-left: calc((40% - 20.7rem) / 2);
+		margin-right: calc((40% - 20.7rem) / 2);
+		position: relative;
+		.center-tab {
+			width: 0.9rem;
+			height: 0.9rem;
+			display: inline-block;
+			text-decoration: none;
+			margin-left: 3rem;
+			margin-right: 3rem;
+			position: relative;
+			&:hover {
+				.center-tab__img {
+					opacity: 0;
+				}
+				.center-tab__img-c {
+					opacity: 1;
+				}
+			}
+			&:nth-of-type(1){
+				&:after {
+					content: 'INTRODUCE';
+					font-family: 'Raleway';
+					color: $blue;
+					font-size: 0.8rem;
+					position: absolute;
+					display: inline-block;
+					top: 1.5rem;
+					left: 50%;
+					@include transform(translateX(-50%));
+					text-align: center;
+					opacity: 0;
+				}
+				&:hover {
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+			&:nth-of-type(2){
+				&:after {
+					content: 'MYWORKS';
+					font-family: 'Raleway';
+					color: $blue;
+					font-size: 0.8rem;
+					position: absolute;
+					display: inline-block;
+					top: 1.5rem;
+					left: 50%;
+					@include transform(translateX(-50%));
+					text-align: center;
+					opacity: 0;
+				}
+				&:hover {
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+			&:nth-of-type(3){
+				&:after {
+					content: 'CONTACT';
+					font-family: 'Raleway';
+					color: $blue;
+					font-size: 0.8rem;
+					position: absolute;
+					display: inline-block;
+					top: 1.5rem;
+					left: 50%;
+					@include transform(translateX(-50%));
+					text-align: center;
+					opacity: 0;
+				}
+				&:hover {
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+			.center-tab__img {
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				opacity: 1;
+			}
+			.center-tab__img-c {
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				opacity: 0;
+			}
+		}
+	}
+	.header-right {
+		height: 1rem;
+		width: 30%;
+		margin-top: 3rem;
+		display: inline-block;
+		.right-tab {
+			width: 1rem;
+			height: 1rem;
+			display: inline-block;
+			background-color: $blue;
+			text-decoration: none;
+			margin-left: calc(100% - 1rem);
+		}
+	}
+}

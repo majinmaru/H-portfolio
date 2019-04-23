@@ -1,0 +1,536 @@
+@import '../../common/stylesheets/base/color.scss';
+@import '../../common/stylesheets/base/font.scss';
+@import '../../common/stylesheets/base/mixin.scss';
+@import '../../common/stylesheets/base/variable.scss';
+@import '../../common/stylesheets/base/keyframes.scss';
+html {
+	font-size: $desktop;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
+.main {
+	width: 100%;
+	height: 30vw;
+	background-color: $blue;
+	position: relative;
+	.main-top {
+		width: 100%;
+		height: 85%;
+		@include box-sizing(border-box);
+		padding: 0 10%;
+		@include flexbox();
+		position: relative;
+		border-bottom: 2px solid $white;
+		.top-surf {
+			width: 15%;
+			height: 100%;
+			position: relative;
+			&:hover {
+				.surf-img {
+					.surf-img__wave {
+						@include animation(wave 3s linear infinite);
+					}
+				}
+			}
+			.surf-img {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				.surf-img__bg {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: auto;
+					z-index: 2;
+					cursor: pointer;
+				}
+				.surf-img__wave {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: auto;
+					z-index: 1;
+				}
+			}
+			.surf-bubbletalk {
+				position: absolute;
+				width: 8rem;
+				height: 8rem;
+				@include box-sizing(border-box);
+				padding: 1rem;
+				background-color: $bubbletalk;
+				top: calc((100% - 8rem) / 2);
+				left: 90%;
+				z-index: 10;
+				display: none;
+				&:after {
+					content: '';
+					width: 1rem;
+					height: 1rem;
+					background-color: $bubbletalk;
+					display: block;
+					@include transform(rotate(45deg));
+					position: absolute;
+					top: calc((100% - 1rem) / 2);
+					left: -0.5rem;
+					z-index: 3;
+				}
+				a {
+					font-size: 0.8rem;
+					font-family: 'S-CoreDream-3Light'; 
+					color: $white;
+					display: inline-block;
+					width: 100%;
+					line-height: 1.2;
+					text-align: center;
+					text-decoration: none;
+					word-break: keep-all;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				.square-icon {
+					width: 100%;
+					position: relative;
+					margin-top: 1rem;
+					&.active {
+						.square-icon__line {
+							&:after {
+								height: 0;
+							}
+						}
+						.square-icon__arrow {
+							@include animation(to-right 0.5s ease);
+							opacity: 1;
+						}
+					}
+					.square-icon__line {
+						width: 2rem;
+						height: 2rem;
+						border-right: 1px solid $white;
+						border-top: 1px solid $white;
+						border-bottom: 1px solid $white;
+						display: inline-block;
+						position: relative;
+						margin-left: calc((100% - 2rem) / 2);
+						&:after {
+							content: '';
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 1px;
+							height: 2rem;
+							@include transition(all 0.5s ease);
+							background-color: $white;
+							display: inline-block;
+						}
+					}
+					.square-icon__arrow {
+						width: 1rem;
+						height: 1rem;
+						@include transform(rotate(45deg));
+						border-top: 1px solid $white;
+						border-right: 1px solid $white;
+						display: inline-block;
+						position: absolute;
+						top: 0.5rem;
+						left: 1rem;
+						opacity: 0;
+					}
+				}
+			}
+		}
+		.top-maru {
+			margin-left: 2%;
+			width: 11%;
+			height: 100%;
+			margin-right: 2%;
+			position: relative;
+			overflow: hidden;
+			display: inline-block;
+			img {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: auto;
+			}
+		}
+		.top-clock {
+			margin-left: 1.5%;
+			width: 4.5%;
+			height: 100%;
+			margin-right: 2%;
+			position: relative;
+			display: inline-block;
+			.clock-img {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				img {
+					position: absolute;
+					top: 23%;
+					left: 0;
+					width: 100%;
+					height: auto;
+					cursor: pointer;
+				}
+			}
+			.clock-bubbletalk {
+				position: absolute;
+				width: 8rem;
+				height: 8rem;
+				@include box-sizing(border-box);
+				padding: 1rem;
+				background-color: $bubbletalk;
+				top: 20%;
+				left: 90%;
+				z-index: 10;
+				display: none;
+				&:after {
+					content: '';
+					width: 1rem;
+					height: 1rem;
+					background-color: $bubbletalk;
+					display: block;
+					@include transform(rotate(45deg));
+					position: absolute;
+					top: calc((100% - 1rem) / 2);
+					left: -0.5rem;
+					z-index: 3;
+				}
+				a {
+					font-size: 0.8rem;
+					font-family: 'S-CoreDream-3Light'; 
+					color: $white;
+					display: inline-block;
+					width: 100%;
+					line-height: 1.2;
+					text-align: center;
+					text-decoration: none;
+					word-break: keep-all;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				.square-icon {
+					width: 100%;
+					position: relative;
+					margin-top: 1rem;
+					&.active {
+						.square-icon__line {
+							&:after {
+								height: 0;
+							}
+						}
+						.square-icon__arrow {
+							@include animation(to-right 0.5s ease);
+							opacity: 1;
+						}
+					}
+					.square-icon__line {
+						width: 2rem;
+						height: 2rem;
+						border-right: 1px solid $white;
+						border-top: 1px solid $white;
+						border-bottom: 1px solid $white;
+						display: inline-block;
+						position: relative;
+						margin-left: calc((100% - 2rem) / 2);
+						&:after {
+							content: '';
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 1px;
+							height: 2rem;
+							@include transition(all 0.5s ease);
+							background-color: $white;
+							display: inline-block;
+						}
+					}
+					.square-icon__arrow {
+						width: 1rem;
+						height: 1rem;
+						@include transform(rotate(45deg));
+						border-top: 1px solid $white;
+						border-right: 1px solid $white;
+						display: inline-block;
+						position: absolute;
+						top: 0.5rem;
+						left: 1rem;
+						opacity: 0;
+					}
+				}
+			}
+		}
+		.top-introduce {
+			width: 30%;
+			height: 100%;
+			margin-left: 2%;
+			margin-right: 2%;
+			position: relative;
+			display: inline-block;
+			.introduce-light {
+				width: 100%;
+				height: 45%;
+				margin-bottom: 5%;
+				position: relative;
+				.introduce-light-img {
+					position: absolute;
+					width: 80%;
+					left: 10%;
+					top: 0;
+					z-index: 2;
+				}
+				.introduce-light-imgflash {
+					position: absolute;
+					width: 80%;
+					left: 10%;
+					top: 0;
+					z-index: 1;
+					@include animation(flash 3s ease infinite);
+				}
+			}
+			.introduce-me {
+				width: 100%;
+				height: 50%;
+				position: relative;
+				display: inline-block;
+				.introduce-me__img {
+					width: 100%;
+					height: 100%;
+					position: relative;
+					overflow: hidden;
+					img {
+						position: absolute;
+						width: 100%;
+						left: 0;
+						bottom: 0;
+						cursor: pointer;
+					}
+				}
+				.introduce-me-bubbletalk {
+					position: absolute;
+					width: 8rem;
+					height: 8rem;
+					@include box-sizing(border-box);
+					padding: 1rem;
+					background-color: $bubbletalk;
+					top: 20%;
+					left: 70%;
+					z-index: 10;
+					display: none;
+					&:after {
+						content: '';
+						width: 1rem;
+						height: 1rem;
+						background-color: $bubbletalk;
+						display: block;
+						@include transform(rotate(45deg));
+						position: absolute;
+						top: calc((100% - 1rem) / 2);
+						left: -0.5rem;
+						z-index: 3;
+					}
+					a {
+						font-size: 0.8rem;
+						font-family: 'S-CoreDream-3Light'; 
+						color: $white;
+						display: inline-block;
+						width: 100%;
+						line-height: 1.2;
+						text-align: center;
+						text-decoration: none;
+						word-break: keep-all;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+					.square-icon {
+						width: 100%;
+						position: relative;
+						margin-top: 1rem;
+						&.active {
+							.square-icon__line {
+								&:after {
+									height: 0;
+								}
+							}
+							.square-icon__arrow {
+								@include animation(to-right 0.5s ease);
+								opacity: 1;
+							}
+						}
+						.square-icon__line {
+							width: 2rem;
+							height: 2rem;
+							border-right: 1px solid $white;
+							border-top: 1px solid $white;
+							border-bottom: 1px solid $white;
+							display: inline-block;
+							position: relative;
+							margin-left: calc((100% - 2rem) / 2);
+							&:after {
+								content: '';
+								position: absolute;
+								bottom: 0;
+								left: 0;
+								width: 1px;
+								height: 2rem;
+								@include transition(all 0.5s ease);
+								background-color: $white;
+								display: inline-block;
+							}
+						}
+						.square-icon__arrow {
+							width: 1rem;
+							height: 1rem;
+							@include transform(rotate(45deg));
+							border-top: 1px solid $white;
+							border-right: 1px solid $white;
+							display: inline-block;
+							position: absolute;
+							top: 0.5rem;
+							left: 1rem;
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+		.top-interior {
+			width: 11%;
+			height: 100%;
+			margin-left: 2%;
+			margin-right: 2%;
+			position: relative;
+			.interior__img {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				img {
+					position: absolute;
+					width: 100%;
+					left: 0;
+					bottom: 0;
+					cursor: pointer;
+				}
+			}
+			.interior-bubbletalk {
+				position: absolute;
+				width: 8rem;
+				height: 8rem;
+				@include box-sizing(border-box);
+				padding: 1rem;
+				background-color: $bubbletalk;
+				top: 60%;
+				left: 90%;
+				z-index: 10;
+				display: none;
+				&:after {
+					content: '';
+					width: 1rem;
+					height: 1rem;
+					background-color: $bubbletalk;
+					display: block;
+					@include transform(rotate(45deg));
+					position: absolute;
+					top: calc((100% - 1rem) / 2);
+					left: -0.5rem;
+					z-index: 3;
+				}
+				a {
+					font-size: 0.8rem;
+					font-family: 'S-CoreDream-3Light'; 
+					color: $white;
+					display: inline-block;
+					width: 100%;
+					line-height: 1.2;
+					text-align: center;
+					text-decoration: none;
+					word-break: keep-all;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				.square-icon {
+					width: 100%;
+					position: relative;
+					margin-top: 1rem;
+					&.active {
+						.square-icon__line {
+							&:after {
+								height: 0;
+							}
+						}
+						.square-icon__arrow {
+							@include animation(to-right 0.5s ease);
+							opacity: 1;
+						}
+					}
+					.square-icon__line {
+						width: 2rem;
+						height: 2rem;
+						border-right: 1px solid $white;
+						border-top: 1px solid $white;
+						border-bottom: 1px solid $white;
+						display: inline-block;
+						position: relative;
+						margin-left: calc((100% - 2rem) / 2);
+						&:after {
+							content: '';
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 1px;
+							height: 2rem;
+							@include transition(all 0.5s ease);
+							background-color: $white;
+							display: inline-block;
+						}
+					}
+					.square-icon__arrow {
+						width: 1rem;
+						height: 1rem;
+						@include transform(rotate(45deg));
+						border-top: 1px solid $white;
+						border-right: 1px solid $white;
+						display: inline-block;
+						position: absolute;
+						top: 0.5rem;
+						left: 1rem;
+						opacity: 0;
+					}
+				}
+			}
+		}
+		.top-deco {
+			margin-left: 4%;
+			margin-right: 8%;
+			width: 5%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+			img {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				top: 18%;
+			}
+		}
+	}
+	.main-bottom {
+		width: 100%;
+		height: 15%;
+	}
+}
