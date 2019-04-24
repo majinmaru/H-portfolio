@@ -1,39 +1,86 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,400");
 @font-face { font-family: 'S-CoreDream-1Thin'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-2ExtraLight'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-3Light'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-4Regular'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-6Bold'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-9Black'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff") format("woff"); font-weight: normal; font-style: normal; }
-@-webkit-keyframes to-left { 0% { -webkit-transform: translate(20px, 0); opacity: 0; }
+@-webkit-keyframes icontext-right { 0% { -webkit-transform: translate(-20px, 0); opacity: 0; }
   50% { opacity: 1; }
   100% { -webkit-transform: translate(0, 0); opacity: 1; } }
-@-moz-keyframes to-left { 0% { -moz-transform: translate(20px, 0); opacity: 0; }
+@-moz-keyframes icontext-right { 0% { -moz-transform: translate(-20px, 0); opacity: 0; }
   50% { opacity: 1; }
   100% { -moz-transform: translate(0, 0); opacity: 1; } }
-@keyframes to-left { 0% { transform: translate(20px, 0); opacity: 0; }
+@keyframes icontext-right { 0% { transform: translate(-20px, 0); opacity: 0; }
   50% { opacity: 1; }
   100% { transform: translate(0, 0); opacity: 1; } }
-@-webkit-keyframes navi-line { 0% { width: 0; }
-  100% { width: 100%; } }
-@-moz-keyframes navi-line { 0% { width: 0; }
-  100% { width: 100%; } }
-@keyframes navi-line { 0% { width: 0; }
-  100% { width: 100%; } }
-@-webkit-keyframes bg-move { 0% { background-position: 0% 0%; }
-  100% { background-position: 50% 80%; } }
-@-moz-keyframes bg-move { 0% { background-position: 0% 0%; }
-  100% { background-position: 50% 80%; } }
-@keyframes bg-move { 0% { background-position: 0% 0%; }
-  100% { background-position: 50% 80%; } }
+@-webkit-keyframes to-right { 0% { -webkit-transform: translate(-20px, 0) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { -webkit-transform: translate(0, 0) rotate(45deg); opacity: 1; } }
+@-moz-keyframes to-right { 0% { -moz-transform: translate(-20px, 0) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { -moz-transform: translate(0, 0) rotate(45deg); opacity: 1; } }
+@keyframes to-right { 0% { transform: translate(-20px, 0) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translate(0, 0) rotate(45deg); opacity: 1; } }
+@-webkit-keyframes up { 0% { -webkit-transform: translate(0, 100%); opacity: 1; }
+  100% { -webkit-transform: translate(0, 0); opacity: 1; } }
+@-moz-keyframes up { 0% { -moz-transform: translate(0, 100%); opacity: 1; }
+  100% { -moz-transform: translate(0, 0); opacity: 1; } }
+@keyframes up { 0% { transform: translate(0, 100%); opacity: 1; }
+  100% { transform: translate(0, 0); opacity: 1; } }
+@-webkit-keyframes wave { 0% { left: 0; }
+  50% { left: 100%; }
+  50.01% { left: -100%; }
+  100% { left: 0; } }
+@-moz-keyframes wave { 0% { left: 0; }
+  50% { left: 100%; }
+  50.01% { left: -100%; }
+  100% { left: 0; } }
+@keyframes wave { 0% { left: 0; }
+  50% { left: 100%; }
+  50.01% { left: -100%; }
+  100% { left: 0; } }
+@-webkit-keyframes flash { 0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; } }
+@-moz-keyframes flash { 0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; } }
+@keyframes flash { 0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; } }
 @-webkit-keyframes img-scale { 0% { -webkit-transform: scale(1); }
   100% { -webkit-transform: scale(1.05); } }
 @-moz-keyframes img-scale { 0% { -moz-transform: scale(1); }
   100% { -moz-transform: scale(1.05); } }
 @keyframes img-scale { 0% { transform: scale(1); }
   100% { transform: scale(1.05); } }
-html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+html { font-size: 14px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
 
 body { width: 100%; overflow-x: hidden; }
+
+.introduce { width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 10%; display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 3rem; }
+.introduce .introduce-img { width: 60%; position: relative; text-align: center; }
+.introduce .introduce-img .img-letter-box { width: 100%; height: 4rem; margin-top: 5rem; margin-bottom: 5rem; position: relative; z-index: 1; }
+.introduce .introduce-img .img-letter-box:nth-of-type(3) { z-index: 3; }
+.introduce .introduce-img .img-letter-box img { height: 100%; }
+.introduce .introduce-img .img-me-box { position: absolute; left: 24%; top: 16rem; width: 12rem; height: 10rem; z-index: 2; overflow: hidden; }
+.introduce .introduce-img .img-me-box img { width: 100%; opacity: 0; }
+.introduce .introduce-img .img-me-box img.up { -webkit-animation: up 3s ease; animation: up 3s ease; opacity: 1; }
+.introduce .introduce-text { width: 40%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 5%; position: relative; }
+.introduce .introduce-text .text-indicator { width: 100%; height: 2.2rem; position: relative; overflow: hidden; }
+.introduce .introduce-text .text-indicator .indicator-line { width: 2rem; height: 2rem; border-left: 1px solid #2727af; border-top: 1px solid #2727af; border-bottom: 1px solid #2727af; display: inline-block; position: relative; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; -webkit-transform: rotate(-180deg); -ms-transform: rotate(-180deg); transform: rotate(-180deg); -webkit-transform-origin: left bottom; -ms-transform-origin: left bottom; transform-origin: left bottom; }
+.introduce .introduce-text .text-indicator .indicator-line.roll { -webkit-transform: rotate(0); -ms-transform: rotate(0); transform: rotate(0); -webkit-transform-origin: left bottom; -ms-transform-origin: left bottom; transform-origin: left bottom; }
+.introduce .introduce-text .text-indicator .indicator-line.line:after { height: 0; }
+.introduce .introduce-text .text-indicator .indicator-line:after { content: ''; position: absolute; bottom: 0; right: 0; width: 1px; height: 2rem; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; background-color: #2727af; display: inline-block; }
+.introduce .introduce-text .text-indicator .indicator-text { font-family: 'Raleway'; color: #2727af; font-size: 0.8rem; top: 0.6rem; left: 0.6rem; position: absolute; opacity: 0; }
+.introduce .introduce-text .text-indicator .indicator-text.appear { -webkit-animation: icontext-right 0.5s ease; animation: icontext-right 0.5s ease; opacity: 1; }
+.introduce .introduce-text .text-title { width: 100%; position: relative; margin-top: 4rem; }
+.introduce .introduce-text .text-title img { width: 50%; }
+.introduce .introduce-text .text-tab-wrapper { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 3rem; }
+.introduce .introduce-text .text-tab-wrapper .text-tab { font-size: 1.4rem; font-family: 'Raleway'; color: #2727af; margin-left: 2rem; margin-right: 2rem; display: inline-block; cursor: pointer; position: relative; }
+.introduce .introduce-text .text-tab-wrapper .text-tab:nth-of-type(1) { margin-left: 0; }
+.introduce .introduce-text .text-tab-wrapper .text-tab:after { content: ''; width: 2rem; height: 1px; background-color: #2727af; display: inline-block; position: absolute; bottom: -1rem; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
 
 /*# sourceMappingURL=index.css.map */
