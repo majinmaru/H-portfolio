@@ -43,6 +43,12 @@
 @keyframes flash { 0% { opacity: 1; }
   50% { opacity: 0; }
   100% { opacity: 1; } }
+@-webkit-keyframes height-up { 0% { height: 100%; }
+  100% { height: 0; } }
+@-moz-keyframes height-up { 0% { height: 100%; }
+  100% { height: 0; } }
+@keyframes height-up { 0% { height: 100%; }
+  100% { height: 0; } }
 @-webkit-keyframes img-scale { 0% { -webkit-transform: scale(1); }
   100% { -webkit-transform: scale(1.05); } }
 @-moz-keyframes img-scale { 0% { -moz-transform: scale(1); }
