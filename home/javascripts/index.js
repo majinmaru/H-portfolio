@@ -94,4 +94,13 @@ $(document).ready(function(){
 		$(".interior-bubbletalk").find(".square-icon").removeClass('active');
 		$(".interior-bubbletalk").css('display', 'none');
 	});
+//main leave
+	$(".main").mouseleave(function(){
+		$(".clock-bubbletalk").find(".square-icon").removeClass('active');
+		$(".clock-bubbletalk").css('display', 'none');
+		$(".introduce-me-bubbletalk").find(".square-icon").removeClass('active');
+		$(".introduce-me-bubbletalk").css('display', 'none');
+		$(".interior-bubbletalk").find(".square-icon").removeClass('active');
+		$(".interior-bubbletalk").css('display', 'none');
+	});
 });
