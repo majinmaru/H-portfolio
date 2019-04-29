@@ -16,77 +16,116 @@ $(document).ready(function(){
 		$(this).find(".square-icon").addClass('active');
 	}, function(){
 		$(this).find(".square-icon").removeClass('active');
+	});
+
+	function startPage(){
+		$(".myworks-content__project").filter(".p-current").find(".project-img").addClass("appear");
+	}
+	startPage();
+
+	$(".category-tab").click(function(e){
+		e.preventDefault();
+		var getIndex = $(this).index();
+		$(".myworks-content").find(".myworks-content__project").removeClass('p-current');
+		$(".myworks-content").find(".myworks-content__project .project-img").removeClass("appear");
+		$(this).find(".category-tab__bar").addClass('current');
+		$(this).siblings().find(".category-tab__bar").removeClass('current');
+		$(".myworks-content").eq(getIndex).siblings().removeClass('c-current');
+		$(".myworks-content").eq(getIndex).addClass('c-current');
+		$(".myworks-content").eq(getIndex).find(".myworks-content__project").first().addClass('p-current');
+		$(".myworks-content").eq(getIndex).find(".myworks-content__project").first().find(".project-img").addClass("appear");
+		$(".myworks-num").find(".num-upper__text").removeClass('current');
+		$(".myworks-num").eq(getIndex).addClass('n-current');
+		$(".myworks-num").eq(getIndex).siblings().removeClass('n-current');
+		$(".myworks-num").eq(getIndex).find(".num-upper__text").first().addClass('current');
 	})
 
-	$(".myworks-content__project").filter(".p-current").find(".project-img").addClass("appear");
+	function runProject(currentPIndex, currentP, currentNIndex, currentN){
+		var nums = $(".myworks-num").filter(".n-current").find(".num-upper__text");
+		var numH = nums.height();
+		var numToShow = nums.eq(currentNIndex);
+		var numToHide = currentN;
+		var numToHideIndex = currentN.index();
 
-
-/*
-	function runProject(currentProjectIndex, currentProject){
-		$(".project-img").addClass('appear');
-	}
-	runProject();
-*/
-	var projects = $(".myworks-content__project");
-
-	function runProject(currentPIndex, currentP, currentN){
+		var projects = $(".myworks-content").filter(".c-current").find(".myworks-content__project");
 		var h = projects.height();
 		var toShow = projects.eq(currentPIndex);
 		var toHide = currentP;
 		var toHideIndex = currentP.index();
-		var numToHide = currentN;
-		var numToShow = $(".num-upper__text").eq(currentPIndex);
+
 		if (currentPIndex > toHideIndex){
 			toHide.animate({
 				"top": "-" + h + "px"
 			}, 500);
 			toHide.removeClass("p-current");
 			toHide.find(".project-img").removeClass("appear");
-			toHide.hide();
 			toShow.css({
 				"top": h + "px"
-			}).show().animate({
+			}).addClass("p-current").animate({
 				"top": 0
 			}, 500);
-			toShow.addClass("p-current");
 			toShow.find(".project-img").addClass("appear");
-			numToHide.removeClass('current');
-			numToShow.addClass('current');
+			numToHide.animate({
+				"top": "-" + h + "px"
+			}, 500);
+			numToHide.removeClass("current");
+			numToShow.css({
+				"top": h + "px"
+			}).addClass("current").animate({
+				"top": 0
+			}, 500);		
 		} else if (currentPIndex < toHideIndex){
 			toHide.animate({
 				"top": h + "px"
 			}, 500);
 			toHide.removeClass("p-current");
 			toHide.find(".project-img").removeClass("appear");
-			toHide.hide();
 			toShow.css({
 				"top": "-" + h + "px"
-			}).show().animate({
+			}).addClass("p-current").animate({
 				"top": 0
 			}, 500);
-			toShow.addClass("p-current");
 			toShow.find(".project-img").addClass("appear");
-			numToHide.removeClass('current');
-			numToShow.addClass('current');
+			numToHide.animate({
+				"top": h + "px"
+			}, 500);
+			numToHide.removeClass("current");
+			numToShow.css({
+				"top": "-" + h + "px"
+			}).addClass("current").animate({
+				"top": 0
+			}, 500);
 		}
 	}
 
 	$(window).bind('mousewheel DOMMouseScroll', function (event) {
-		var currentProject = $(".myworks-content__project").filter(".p-current");
-		var currentProjectIndex = $(".myworks-content__project").filter(".p-current").index();
+		var currentContent = $(".myworks-content").filter(".c-current");
+		var projects = currentContent.find(".myworks-content__project");
+		var currentProject = currentContent.find(".myworks-content__project").filter(".p-current");
+		var currentProjectIndex = currentProject.index();
 		var nextProjectIndex;
-		var currentNum = $(".num-upper__text").filter(".current");
+
+		var myworksNum = $(".myworks-num").filter(".n-current");
+		var nums = myworksNum.find(".num-upper__text");
+		var currentNum = myworksNum.find(".num-upper__text").filter(".current");
+		var currentNumIndex = currentNum.index();
+		var nextNumIndex;
+
     if (projects.filter(":animated").length > 0) { return; } //애니메이션 진행 중에 발생한 휠은 무시
 		if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
 			// scroll up
 			nextProjectIndex = currentProject.prev().index();
 			currentProjectIndex = nextProjectIndex >= 0 ? nextProjectIndex : projects.last().index();
+			nextNumIndex = currentNum.prev().index();
+			currentNumIndex = nextNumIndex >= 0 ? nextNumIndex : nums.last().index();
 		} else {
 			// scroll down
 			nextProjectIndex = currentProject.next().index();
-			currentProjectIndex = nextProjectIndex >= 0 ? nextProjectIndex : projects.first().index();		
+			currentProjectIndex = nextProjectIndex >= 0 ? nextProjectIndex : projects.first().index();
+			nextNumIndex = currentNum.next().index();
+			currentNumIndex = nextNumIndex >= 0 ? nextNumIndex : nums.first().index();
 		}
-		runProject(currentProjectIndex, currentProject, currentNum)
+		runProject(currentProjectIndex, currentProject, currentNumIndex, currentNum)
 	});
 
 
