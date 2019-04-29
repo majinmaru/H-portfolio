@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,400");
 @font-face { font-family: 'S-CoreDream-1Thin'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-1Thin.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-2ExtraLight'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-3Light'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-4Regular'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-6Bold'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff") format("woff"); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-9Black'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff") format("woff"); font-weight: normal; font-style: normal; }
-@-webkit-keyframes to-left { 0% { -webkit-transform: translate(20px, 0); opacity: 0; }
+@-webkit-keyframes icontext-right { 0% { -webkit-transform: translate(-20px, 0); opacity: 0; }
   50% { opacity: 1; }
   100% { -webkit-transform: translate(0, 0); opacity: 1; } }
-@-moz-keyframes to-left { 0% { -moz-transform: translate(20px, 0); opacity: 0; }
+@-moz-keyframes icontext-right { 0% { -moz-transform: translate(-20px, 0); opacity: 0; }
   50% { opacity: 1; }
   100% { -moz-transform: translate(0, 0); opacity: 1; } }
-@keyframes to-left { 0% { transform: translate(20px, 0); opacity: 0; }
+@keyframes icontext-right { 0% { transform: translate(-20px, 0); opacity: 0; }
   50% { opacity: 1; }
   100% { transform: translate(0, 0); opacity: 1; } }
 @-webkit-keyframes to-right { 0% { -webkit-transform: translate(-20px, 0) rotate(45deg); opacity: 0; }
@@ -23,6 +23,21 @@
 @keyframes to-right { 0% { transform: translate(-20px, 0) rotate(45deg); opacity: 0; }
   50% { opacity: 1; }
   100% { transform: translate(0, 0) rotate(45deg); opacity: 1; } }
+@-webkit-keyframes scroll-arrow { 0% { -webkit-transform: translate(0, -20px) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { -webkit-transform: translate(0, 0) rotate(45deg); opacity: 1; } }
+@-moz-keyframes scroll-arrow { 0% { -moz-transform: translate(0, -20px) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { -moz-transform: translate(0, 0) rotate(45deg); opacity: 1; } }
+@keyframes scroll-arrow { 0% { transform: translate(0, -20px) rotate(45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translate(0, 0) rotate(45deg); opacity: 1; } }
+@-webkit-keyframes up { 0% { -webkit-transform: translate(0, 100%); opacity: 1; }
+  100% { -webkit-transform: translate(0, 0); opacity: 1; } }
+@-moz-keyframes up { 0% { -moz-transform: translate(0, 100%); opacity: 1; }
+  100% { -moz-transform: translate(0, 0); opacity: 1; } }
+@keyframes up { 0% { transform: translate(0, 100%); opacity: 1; }
+  100% { transform: translate(0, 0); opacity: 1; } }
 @-webkit-keyframes wave { 0% { left: 0; }
   50% { left: 100%; }
   50.01% { left: -100%; }
@@ -44,6 +59,12 @@
 @keyframes flash { 0% { opacity: 1; }
   50% { opacity: 0; }
   100% { opacity: 1; } }
+@-webkit-keyframes height-up { 0% { height: 100%; }
+  100% { height: 0; } }
+@-moz-keyframes height-up { 0% { height: 100%; }
+  100% { height: 0; } }
+@keyframes height-up { 0% { height: 100%; }
+  100% { height: 0; } }
 @-webkit-keyframes img-scale { 0% { -webkit-transform: scale(1); }
   100% { -webkit-transform: scale(1.05); } }
 @-moz-keyframes img-scale { 0% { -moz-transform: scale(1); }
