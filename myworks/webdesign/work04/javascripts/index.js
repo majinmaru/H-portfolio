@@ -12,12 +12,14 @@ $(document).ready(function(){
 	function jumboImg(){
 		$(".jumbo-img").addClass('expand');
 	}
-	jumboImg();
 
 	function scrollIcon(){
 		$(".scroll-icon").addClass('active');
 	}
 	
+	setTimeout(function(){
+		jumboImg();
+	}, 1000);
 	setTimeout(function(){
 		scrollIcon();
 	}, 2000);
