@@ -209,6 +209,19 @@ body {
 		height: 50vw;
 		@include workfourbg();
 		margin-top: 7rem;
+		@include box-sizing(border-box);
+		padding: 5% 10%;
+		position: relative;
+		.main-video {
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+			max-width: 100%;
+			@include box-shadow(10px 20px 15px $box-shadow);
+			.main-video__webm {
+				width: 100%;
+			}
+		}
 	}
 	.work-content__logo {
 		width: 100%;
@@ -548,6 +561,16 @@ body {
 					width: 100%;
 				}
 			}
+		}
+	}
+	.work-content__end {
+		width: 100%;
+		position: relative;
+		@include box-sizing(border-box);
+		padding: 0 35%;
+		margin-top: 7rem;
+		img {
+			width: 100%;
 		}
 	}
 }

@@ -17,7 +17,8 @@ $(document).ready(function(){
 	function scrollIcon(){
 		$(".scroll-icon").addClass('active');
 	}
+	
 	setTimeout(function(){
 		scrollIcon();
-	}, 1000);
+	}, 2000);
 });
