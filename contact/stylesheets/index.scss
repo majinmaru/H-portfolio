@@ -4,6 +4,7 @@
 @import '../../common/stylesheets/base/variable.scss';
 @import '../../common/stylesheets/base/keyframes.scss';
 html {
+	font-size: $desktop;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
@@ -11,4 +12,128 @@ html {
 body {
 	width: 100%;
 	overflow-x: hidden;
+}
+.contact {
+	width: 100%;
+	position: relative;
+	@include flexbox();
+	@include box-sizing(border-box);
+	padding: 0 10%;
+	margin-top: 7%;
+	.contact-text {
+		width: 50%;
+		@include box-sizing(border-box);
+		padding-right: 5%;
+		position: relative;
+		display: inline-block;
+		.text-indicator {
+			width: 100%;
+			height: 2.2rem;
+			position: relative;
+			overflow: hidden;
+			.indicator-line {
+				width: 2rem;
+				height: 2rem;
+				border-left: 1px solid $blue;
+				border-top: 1px solid $blue;
+				border-bottom: 1px solid $blue;
+				display: inline-block;
+				position: relative;
+				@include transition(all 0.5s ease);
+				@include transform(rotate(-180deg));
+				@include transform-origin(left bottom);
+				&.roll {
+					@include transform(rotate(0));
+					@include transform-origin(left bottom);
+				}
+				&.line {
+					&:after {
+						height: 0;
+					}
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 1px;
+					height: 2rem;
+					@include transition(all 0.5s ease);
+					background-color: $blue;
+					display: inline-block;
+				}
+			}
+			.indicator-text {
+				font-family: 'Raleway';
+				color: $blue;
+				font-size: 0.8rem;
+				top: 0.6rem;
+				left: 0.6rem;
+				position: absolute;
+				opacity: 0;
+				&.appear {
+					@include animation(icontext-right 0.5s ease);
+					opacity: 1;
+				}
+			}
+		}
+		.text-title {
+			width: 100%;
+			position: relative;
+			margin-top: 2rem;
+			p {
+				font-size: 4.5rem;
+				font-family: 'S-CoreDream-9Black';
+				color: $blue;
+				line-height: 1.2;
+				letter-spacing: 0.1rem;
+			}
+		}
+		.text-email {
+			width: 100%;
+			position: relative;
+			margin-top: 3rem;
+			.email {
+				font-size: 1.2rem;
+				font-family: 'S-CoreDream-6Bold';
+				color: $gray1;
+				margin-right: 3rem;
+				line-height: 1;
+			}
+			.email-address {
+				font-size: 1.2rem;
+				font-family: 'S-CoreDream-4Regular';
+				color: $gray1;
+				line-height: 1;
+			}
+		}
+		.text-desc {
+			width: 100%;
+			@include box-sizing(border-box);
+			padding-right: 20%;
+			margin-top: 2rem;
+			p {
+				font-family: 'S-CoreDream-4Regular';
+				font-size: 1.1rem;
+				line-height: 1.5;
+				color: $gray1;
+				word-break: keep-all;
+			}
+		}
+		.text-rights {
+			font-size: 0.9rem;
+			font-family: 'Raleway';
+			color: $gray3;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+	}
+	.contact-img {
+		width: 50%;
+		display: inline-block;
+		img {
+			width: 100%;
+		}
+	}
 }
