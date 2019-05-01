@@ -84,6 +84,12 @@ html { font-size: 14px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoot
 
 body { width: 100%; overflow-x: hidden; }
 
+[data-aos="content-up"] { transform: translateY(20px); opacity: 0; transition-property: transform, opacity; }
+[data-aos="content-up"].aos-animate { transform: translateY(0); opacity: 1; }
+
+[data-aos="content-right"] { transform: translateX(-30px); opacity: 0; transition-property: transform, opacity; }
+[data-aos="content-right"].aos-animate { transform: translateX(0); opacity: 1; }
+
 .container { width: 100%; position: relative; }
 .container .jumbo { width: 100%; margin-top: 7rem; position: relative; }
 .container .jumbo .jumbo-img { width: 40%; height: 20vw; margin-left: 30%; position: relative; background-image: url("../../images/jumbo.jpg"); background-repeat: no-repeat; background-size: cover; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
@@ -166,7 +172,7 @@ body { width: 100%; overflow-x: hidden; }
 .container .work-content__convenient .convenient-context .convenient-context__title { width: 100%; position: relative; font-family: 'S-CoreDream-6Bold'; color: #8002c1; font-size: 2.2rem; line-height: 1; }
 .container .work-content__convenient .convenient-context .convenient-context__subtitle { width: 100%; position: relative; font-family: 'S-CoreDream-2ExtraLight'; color: #424242; font-size: 1.4rem; line-height: 1; margin-top: 1rem; }
 .container .work-content__convenient .convenient-context .convenient-context__desc { width: 30%; position: relative; font-family: 'S-CoreDream-4Regular'; font-size: 1.1rem; color: #424242; line-height: 1.5; word-break: keep-all; margin-top: 4rem; }
-.container .work-content__convenient .convenient-context .convenient-context__img { width: 100%; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 7%; margin-top: 15%; }
+.container .work-content__convenient .convenient-context .convenient-context__img { width: 100%; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 7%; margin-top: 7%; }
 .container .work-content__convenient .convenient-context .convenient-context__img img { width: 100%; }
 .container .work-content__end { width: 100%; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 35%; margin-top: 7rem; }
 .container .work-content__end img { width: 100%; }

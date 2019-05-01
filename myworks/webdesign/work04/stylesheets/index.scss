@@ -13,6 +13,26 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 }
+[data-aos="content-up"] {
+	transform: translateY(20px);
+	opacity: 0;
+	transition-property: transform, opacity;
+	&.aos-animate {
+		transform: translateY(0);
+	    opacity: 1;
+	}
+}
+
+[data-aos="content-right"] {
+	transform: translateX(-30px);
+	opacity: 0;
+	transition-property: transform, opacity;
+	&.aos-animate {
+		transform: translateX(0);
+	    opacity: 1;
+	}
+}
+
 .container {
 	width: 100%;
 	position: relative;
@@ -556,7 +576,7 @@ body {
 				position: relative;
 				@include box-sizing(border-box);
 				padding: 0 7%;
-				margin-top: 15%;
+				margin-top: 7%;
 				img {
 					width: 100%;
 				}
